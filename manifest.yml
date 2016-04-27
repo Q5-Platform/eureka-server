@@ -1,0 +1,8 @@
+---
+applications:
+  - name: blog-eureka
+    memory: 350M
+    path: target/eureka-server.jar
+    buildpack: java_buildpack_offline
+    env:
+      SECURITY_USER_PASSWORD: changeme
