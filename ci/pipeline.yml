@@ -87,5 +87,4 @@ jobs:
             - | 
               cred='{"uri":"http://'{{eureka-username}}'@'{{eureka-password}}':blog-eureka.cfapps.pez.pivotal.io"}'
               cf login -a {{cf-api}} -u {{cf-username}} -p {{cf-password}} -o {{cf-org}} -s {{cf-space}}
-              cf services
-              #cf create-user-provided-service eureka-server -p '{"uri":"http://eureka-server-metflix.cfapps.io"}'
+              cf create-user-provided-service eureka-server -p $cred
