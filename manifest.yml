@@ -1,7 +1,7 @@
 ---
 applications:
   - name: blog-eureka
-    memory: 350M
+    memory: 640M
     path: target/eureka-server.jar
     buildpack: java_buildpack_offline
     env:
