@@ -6,3 +6,5 @@ applications:
     buildpack: java_buildpack_offline
     env:
       SECURITY_USER_PASSWORD: changeme
+    services:
+      - config-service
