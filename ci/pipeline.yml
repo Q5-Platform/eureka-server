@@ -85,6 +85,6 @@ jobs:
             args: 
             - -c 
             - | 
-              cred='{"uri":"http://'{{eureka-username}}'@'{{eureka-password}}':blog-eureka.cfapps.pez.pivotal.io"}'
+              cred='{"uri":"http://'{{eureka-username}}':'{{eureka-password}}'@blog-eureka.cfapps.pez.pivotal.io"}'
               cf login -a {{cf-api}} -u {{cf-username}} -p {{cf-password}} -o {{cf-org}} -s {{cf-space}}
               cf create-user-provided-service eureka-service -p $cred
