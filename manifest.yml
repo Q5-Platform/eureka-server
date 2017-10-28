@@ -1,10 +1,15 @@
 ---
 applications:
   - name: blog-eureka
-    memory: 640M
+    memory: 1g
+    domain: sslip.io
+    host: blog-eureka-202-241-169-198
     path: target/eureka-server.jar
-    buildpack: java_buildpack_offline
+    buildpack: java_buildpack
     env:
       SECURITY_USER_PASSWORD: changeme
     services:
-      - config-service
+    - blog-config
+
+# cf create-user-provided-service blog-config -p '{"uri":"https://blog-config-202-241-169-198.sslip.io", "username":"user", "password":"password"}'
+# cf create-user-provided-service blog-eureka -p '{"uri" : "https://user:password@blog-eureka-202-241-169-198.sslip.io"}'
